@@ -13,7 +13,7 @@ def Sanatize(str):
 
 def check_db():
     try:
-        myDB = MySQLdb.connect(host='localhost', port=3306, user='halenow_data', passwd='D5gyKvfi6U2X', db='halenow')
+        myDB = MySQLdb.connect(host='localhost', port=3306, user=DB_USER_USER, passwd=DB_USER_PASS, db='halenow')
         c = myDB.cursor()
         c.execute("SELECT * from number")
         result = c.fetchone()
@@ -62,7 +62,7 @@ def setup_db():
     # print hashed_pass
     c.execute("INSERT INTO admin (user, password) VALUES (%s,%s)", (user, hashed_pass))
     try:
-        c.execute("CREATE USER 'halenow_data'@'localhost' IDENTIFIED BY 'D5gyKvfi6U2X';")
+        c.execute("CREATE USER '{}'@'localhost' IDENTIFIED BY '{}';".format(DB_USER_USER, DB_USER_PASS))
     except:
         pass
     c.execute("flush privileges;")
