@@ -15,13 +15,13 @@ It is necessary to install dependencies in order to test the site locally before
 ### Linux ###
 ```bash
 cat apt-requirements | xargs sudo apt-get install
-sudo pip install -r requirements
+sudo pip install -r requirements.txt
 ```
 
 ### Mac ###
 ```bash
 cat brew-requirements | xargs brew install
-sudo pip install -r requirements
+sudo pip install -r requirements.txt
 ```
 
 ## Install Requirements ##
